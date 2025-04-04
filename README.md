@@ -1,3 +1,13 @@
+Projenin frontend kısmıdır. Angular 19 ile yazılmıştır.
+Projeyi klonlayarak bir kaç değişikli ile hazır hale getirebilirsiniz.
+Proje içerisinde bulunan ~ **models** ~ klasörü altındaki ~ **apiurl** ~ classındaki ~ **baseurl** ~ değişkenine kendi backendinizin çalıştığı url bilgisini girmelisiniz.
+Bu değişiklikten sonra proje hazır hale gelecektir. 
+ng-serve komutu ile çalıştırabilirsiniz.
+
+İyi çalışmalar dilerim.
+Teşekkürler.
+
+
 # OnlineProductManagement
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
