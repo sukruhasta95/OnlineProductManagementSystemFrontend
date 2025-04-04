@@ -3,19 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginDto } from '../models/LoginDto';
 import { UserModel } from '../models/UserModel';
+import { APIURL } from '../models/apiUrl';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'https://localhost:7128/api';
+  private apiUrl = APIURL.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   login(input:LoginDto): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/login`, input );
+    return this.http.post(`${this.apiUrl}${APIURL.auth.login}`, input );
   }
 
   signup(input:UserModel): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/register`, input );
+    return this.http.post(`${this.apiUrl}${APIURL.auth.register}`, input );
   }
   private tokenKey = 'authToken';
 
