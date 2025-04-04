@@ -1,0 +1,50 @@
+<div class="product-table-container">
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="openAddDialog()">Yeni Ürün Ekle</button>
+    <mat-form-field appearance="outline">
+      <mat-label>Ürün Ara</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ürün adını girin...">
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="refresh()"
+      matTooltip="Yenile"><mat-icon>refresh</mat-icon></button>
+    <p><a routerLink="/auth/login" class="router-link">Çıkış yapın</a></p>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Ürün ID </th>
+      <td mat-cell *matCellDef="let product">{{product.id.slice(0, 8)}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Ürün Adı </th>
+      <td mat-cell *matCellDef="let product">{{product.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Açıklama </th>
+      <td mat-cell *matCellDef="let product">{{product.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Fiyat </th>
+      <td mat-cell *matCellDef="let product">{{product.price}} ₺</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> İşlemler </th>
+      <td mat-cell *matCellDef="let product">
+        <button mat-icon-button (click)="openUpdateDialog(product)" matTooltip="Güncelle">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteProduct(product)" matTooltip="Sil">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

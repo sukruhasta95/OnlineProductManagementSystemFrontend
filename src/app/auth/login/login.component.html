@@ -1,0 +1,15 @@
+<div class="login-container">
+  <mat-card>
+    <h2>Giriş Yap</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Kullanıcı Adı</mat-label>
+      <input matInput [(ngModel)]="loginInput.username">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Şifre</mat-label>
+      <input matInput [(ngModel)]="loginInput.password" type="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">Giriş Yap</button>
+    <p>Hesabınız yok mu? <a routerLink="/auth/signup" class="router-link">Kayıt olun</a></p>
+  </mat-card>
+</div>

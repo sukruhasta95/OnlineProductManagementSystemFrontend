@@ -1,0 +1,43 @@
+.product-table-container {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+mat-header-cell {
+  font-weight: bold;
+}
+
+mat-cell {
+  text-align: center;
+}
+
+mat-header-row,
+mat-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-cell {
+  padding: 10px;
+}
+
+a.router-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.router-link:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
+}

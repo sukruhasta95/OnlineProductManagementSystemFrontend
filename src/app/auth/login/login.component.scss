@@ -1,0 +1,27 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f4;
+
+  mat-card {
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  a.router-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  a.router-link:hover {
+    text-decoration: underline;
+  }
+}
